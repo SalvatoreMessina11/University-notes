@@ -1,0 +1,118 @@
+% !TEX root = ../main.tex
+\subsection*{HW 43 --- Well-Definedness of the Integral of Simple Functions}%
+\manualtoc{subsection}{\texorpdfstring{HW 43 --- Well-Definedness of the Integral of Simple Functions}{HW 43 --- Well-Definedness of the Integral of Simple Functions}}{studiabile-nav-1001}%
+
+\studyheading{Statement.} Fix $(S,\Sigma,\mu)$ and let $f\in SF^+$ have the following two representations:
+\[
+f=\sum_{i=1}^{n}a_i\mathbf1_{A_i}
+\qquad\text{and}\qquad
+f=\sum_{j=1}^{m}b_j\mathbf1_{B_j},
+\]
+for numbers $(a_i)_{i=1}^{n},(b_j)_{j=1}^{m}\subseteq[0,\infty)$ and sets
+$(A_i)_{i=1}^{n},(B_j)_{j=1}^{m}\subseteq\Sigma$. Show that
+\[
+\mu_0(f)=\sum_{i=1}^{n}a_i\mu(A_i)
+=\sum_{j=1}^{m}b_j\mu(B_j).
+\]
+
+\par\noindent\studyheading{Proof.}\par\nobreak
+
+\par\noindent\studyheading{Reduction to disjoint partitions.}\par\nobreak
+
+A finite measurable partition of $S$ is a family of nonempty measurable sets that are pairwise disjoint and whose union is $S$. For instance, two sets $A,B\in\Sigma$ give the pieces
+\[
+A\cap B,\qquad A\cap B^c,\qquad A^c\cap B,\qquad A^c\cap B^c,
+\]
+with empty pieces omitted. In particular,
+\[
+A=(A\cap B)\cup(A\cap B^c),\qquad
+B=(A\cap B)\cup(A^c\cap B).
+\]
+Thus each original set can be recovered as a union of disjoint pieces, while the remaining piece completes the partition of $S$.
+
+For the first representation, start with $S$ and consider $A_1,\ldots,A_n$ one at a time. At the $i$th step, split every current piece $E$ into the nonempty sets among
+\[
+E\cap A_i,\qquad E\cap A_i^c.
+\]
+Indeed,
+\[
+E=(E\cap A_i)\cup(E\cap A_i^c),\qquad
+(E\cap A_i)\cap(E\cap A_i^c)=\emptyset.
+\]
+Each step preserves disjointness and the union $S$; measurability follows from closure of $\Sigma$ under complements and finite intersections. After finitely many steps we obtain a partition $C_1,\ldots,C_r$ of $S$. Each $C_k$ lies entirely inside or outside every $A_i$, so each $A_i$ is a union of some $C_k$ and $f$ is constant on each $C_k$.
+
+Applying the same construction to $B_1,\ldots,B_m$ gives another partition $D_1,\ldots,D_t$ of $S$. Each $B_j$ is a union of some $D_\ell$, and $f$ is constant on each $D_\ell$.
+
+Choose $s_k\in C_k$ and $t_\ell\in D_\ell$, and set
+\[
+c_k=f(s_k),\qquad d_\ell=f(t_\ell),
+\qquad k=1,\ldots,r,\quad \ell=1,\ldots,t.
+\]
+From the two representations of $f$,
+\[
+c_k=\sum_{i=1}^{n}a_i\mathbf1_{A_i}(s_k),\qquad
+d_\ell=\sum_{j=1}^{m}b_j\mathbf1_{B_j}(t_\ell),
+\]
+for every $k=1,\ldots,r$ and $\ell=1,\ldots,t$.
+
+Since the $C_k$ partition $S$, we obtain
+\[
+\begin{aligned}
+\sum_{i=1}^{n}a_i\mu(A_i)&=\sum_{i=1}^{n}a_i\mu\left(A_i\cap\bigcup_{k=1}^{r}C_k\right) =\sum_{k=1}^{r}\sum_{i=1}^{n}a_i\mu(A_i\cap C_k)\\
+&=\sum_{k=1}^{r}\left(\sum_{i=1}^{n}a_i\mathbf1_{A_i}(s_k)\right)\mu(C_k) =\sum_{k=1}^{r}c_k\mu(C_k).
+\end{aligned}
+\]
+The second equality uses finite additivity on the disjoint pieces $A_i\cap C_k$ and rearranges finite nonnegative sums. The third follows because each $C_k$ lies entirely inside or outside $A_i$, and the last uses the expression for $c_k$. Likewise,
+\[
+\sum_{j=1}^{m}b_j\mu(B_j)=\sum_{\ell=1}^{t}d_\ell\mu(D_\ell).
+\]
+These identities show that we may assume, without loss of generality, that the representing families are finite measurable partitions of $S$, since the replacement preserves both $f$ and the weighted sums. Moreover, by merging partition elements with equal coefficients, any such representation can be reduced to canonical form, again without changing the weighted sum.
+
+\par\noindent\studyheading{Proof for partition representations.}\par\nobreak
+
+Assume now that $(A_i)_{i=1}^{n}$ and $(B_j)_{j=1}^{m}$ are finite measurable partitions of $S$, with the corresponding coefficients $a_i$ and $b_j$. As proved above, this entails no loss of generality.
+
+The nonempty intersections $A_i\cap B_j$ form a common finite measurable partition of $S$. Indeed, they cover $S$ because every $s\in S$ belongs to some $A_i$ and some $B_j$. Moreover, for $(i,j)\neq(k,\ell)$,
+\[
+\begin{aligned}
+(A_i\cap B_j)\cap(A_k\cap B_\ell)&=(A_i\cap A_k)\cap(B_j\cap B_\ell) =\emptyset.
+\end{aligned}
+\]
+The last equality follows because either $i\neq k$ or $j\neq\ell$, so at least one intersection is empty. Finally, $A_i\cap B_j\in\Sigma$ by closure under finite intersections.
+
+For every $i=1,\ldots,n$ and $j=1,\ldots,m$, we distinguish two cases.
+
+\par\noindent\studyheading{Case 1 --- Empty intersection.}\par\nobreak
+ If $A_i\cap B_j=\emptyset$, then
+$\mu(A_i\cap B_j)=0$.
+
+\par\noindent\studyheading{Case 2 --- Nonempty intersection.}\par\nobreak
+ If $A_i\cap B_j\neq\emptyset$,
+choose $s\in A_i\cap B_j$. Since the two families are partitions, $s$
+belongs to exactly one set in each family. Hence,
+\[
+\begin{aligned}
+a_i&=\sum_{k=1}^{n}a_k\mathbf1_{A_k}(s) =f(s) =\sum_{\ell=1}^{m}b_\ell\mathbf1_{B_\ell}(s) =b_j.
+\end{aligned}
+\]
+The first and last equalities follow because only the indicators of $A_i$
+and $B_j$ equal $1$ in their respective sums; the middle equalities use the
+two representations of $f$.
+
+Thus $a_i=b_j$ holds for pairs whose intersection is nonempty. For the
+remaining pairs the coefficients need not agree, but the intersection has
+measure zero. In both cases, therefore,
+\[
+a_i\mu(A_i\cap B_j)=b_j\mu(A_i\cap B_j),
+\qquad\forall\,i=1,\ldots,n,\quad j=1,\ldots,m.
+\]
+Using $S=\bigcup_{j=1}^{m}B_j=\bigcup_{i=1}^{n}A_i$, we obtain
+\[
+\begin{aligned}
+\sum_{i=1}^{n}a_i\mu(A_i)&=\sum_{i=1}^{n}a_i\mu(A_i\cap S) =\sum_{i=1}^{n}a_i\mu\left(A_i\cap\bigcup_{j=1}^{m}B_j\right) =\sum_{i=1}^{n}\sum_{j=1}^{m}a_i\mu(A_i\cap B_j)\\
+&=\sum_{j=1}^{m}\sum_{i=1}^{n}b_j\mu(A_i\cap B_j) =\sum_{j=1}^{m}b_j\mu\left(B_j\cap\bigcup_{i=1}^{n}A_i\right) =\sum_{j=1}^{m}b_j\mu(B_j).
+\end{aligned}
+\]
+The third and fifth equalities use finite additivity on disjoint intersections. The fourth follows from the equality of the contributions in both cases and rearrangement of finite sums. All expressions remain valid when some measures are infinite, under the convention $0\cdot\infty=0$.
+
+Thus the weighted sum is independent of the chosen representation of $f$, and $\mu_0(f)$ is well-defined. Therefore, the statement is proved.

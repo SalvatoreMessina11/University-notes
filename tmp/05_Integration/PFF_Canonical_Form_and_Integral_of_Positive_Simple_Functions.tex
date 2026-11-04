@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{microtype}
+\geometry{margin=2.7cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.65em}
+
+\begin{document}
+
+\section*{Different Representations and Canonical Form of Simple Functions}
+
+A simple function may admit different representations, corresponding to different choices of coefficients $a_k$ and measurable sets $A_k$.
+
+For example, let $S=[0,1]$ and $\Sigma=\mathcal B([0,1])$. Then
+\[
+f(s)=\mathbf{1}_{[1/2,1]}(s)
+=\mathbf{1}_{[1/2,2/3)}(s)
++\mathbf{1}_{[2/3,1]}(s).
+\]
+
+The equality follows because the two intervals on the right are disjoint and their union is $[1/2,1]$. Thus, the same function can be represented using different measurable sets.
+
+A simple function is expressed in \emph{canonical form} if
+\[
+f(s)=\sum_{k=1}^{m}a_k\mathbf{1}_{A_k}(s),
+\]
+where
+\[
+a_1<a_2<\cdots<a_m,
+\qquad
+A_k=f^{-1}(\{a_k\}),
+\quad k=1,\ldots,m.
+\]
+
+In this representation, the coefficients are precisely the distinct values attained by $f$, and the sets $A_k$ are their corresponding level sets. Consequently, these sets are pairwise disjoint and form a partition of $S$.
+
+Every nonnegative simple function can be expressed in canonical form by collecting all points where it takes the same value. The corresponding level sets are measurable, pairwise disjoint, and form a finite partition of $S$. All values actually attained by $f$ must be included, including zero whenever it is attained.
+
+\subsection*{Definition --- Integral of a Positive Simple Function}
+
+We denote the collection of non-negative simple functions by $SF^+$. For $f\in SF^+$, represented as
+\[
+f=\sum_{k=1}^{m}a_k\mathbf{1}_{A_k},
+\]
+we define
+\[
+\mu_0(f):=\int_S f\,d\mu
+:=\sum_{k=1}^{m}a_k\mu(A_k).
+\]
+
+This extends the definition of the integral of an indicator function, since for $f=\mathbf{1}_A$ we recover $\mu_0(f)=\mu(A)$.
+
+\subsection*{Observation --- The Convention $0\cdot\infty=0$}
+
+Let $S=\mathbb R$, $\Sigma=\mathcal B(\mathbb R)$, $\mu=\mathrm{Leb}$, and consider the zero function $f=0$.
+
+We obtain
+\[
+\int_S f\,d\mu
+=0\cdot\mu(\mathbb R)
+=0\cdot\infty.
+\]
+
+Since the integral of the zero function must equal zero, we adopt the convention
+\[
+0\cdot\infty:=0.
+\]
+
+This ensures that zero coefficients contribute nothing to the integral, even when the corresponding sets have infinite measure.
+
+Finally, since a simple function may admit different representations, we must verify that the value of $\mu_0(f)$ does not depend on the chosen representation.
+
+This is the \emph{well-definedness of the integral of simple functions}, which will be established in the next homework.
+
+\end{document}

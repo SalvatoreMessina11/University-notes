@@ -1,0 +1,112 @@
+% !TEX root = ../main.tex
+\subsection*{HW 44 --- Properties of Integrals of Simple Functions}%
+\manualtoc{subsection}{\texorpdfstring{HW 44 --- Properties of Integrals of Simple Functions}{HW 44 --- Properties of Integrals of Simple Functions}}{studiabile-nav-1002}%
+
+\studyheading{Statement.} Fix a measure space $(S,\Sigma,\mu)$. Prove the following properties.
+
+\studyheading{(i)} If $f,g\in SF^+$ and $\mu(\{s\in S:f(s)\ne g(s)\})=0$, then $\mu_0(f)=\mu_0(g)$.
+
+\studyheading{(ii)} If $f,g\in SF^+$ and $c\ge0$, then $f+g,cf\in SF^+$; moreover,
+\[
+\mu_0(f+g)=\mu_0(f)+\mu_0(g),\qquad \mu_0(cf)=c\mu_0(f).
+\]
+
+\studyheading{(iii)} If $f,g\in SF^+$ and $f\le g$, then $\mu_0(f)\le\mu_0(g)$.
+
+\studyheading{(iv)} If $f,g\in SF^+$, then $f\vee g:=\max\{f,g\}$ and $f\wedge g:=\min\{f,g\}$ also belong to $SF^+$.
+
+\par\noindent\studyheading{Recall --- $\boldsymbol{\mu}$-almost everywhere.}%
+\inlinetoc{subsubsection}{\texorpdfstring{Recall --- $\boldsymbol{\mu}$-almost everywhere.}{Recall --- mu-almost everywhere.}}{studiabile-nav-1003}%
+
+A property $P(s)$ holds $\mu$-almost everywhere ($\mu$-a.e.) if it fails only on a set of $\mu$-measure zero. In particular, for measurable $f,g$,
+\[
+f=g\quad\mu\text{-a.e.}
+\quad\Longleftrightarrow\quad
+\mu\bigl(\{s\in S:f(s)\ne g(s)\}\bigr)=0.
+\]
+Thus $f$ and $g$ need not agree at every point.
+
+When constructing a common partition as in HW~43, we discard only empty intersections, since partition elements must be nonempty. We do not discard nonempty sets of measure zero: for example, on $S=[0,1]$ with $\mu=\mathrm{Leb}$,
+\[
+D=\{\tfrac12\}\ne\emptyset,\qquad \mu(D)=0.
+\]
+Such a set remains a partition element, although its contribution to the integral is zero.
+
+\par\noindent\studyheading{Proof.}\par\nobreak
+
+By HW~43, both $f$ and $g$ admit canonical representations, whose level sets form finite measurable partitions of $S$. Intersecting these partitions and omitting empty intersections gives a common finite measurable partition $D_1,\ldots,D_r$, on which both functions are constant.
+\[
+f=\sum_{k=1}^{r}a_k\mathbf1_{D_k},\qquad
+ g=\sum_{k=1}^{r}b_k\mathbf1_{D_k},
+\]
+where $a_k,b_k\ge0$. By HW~43, the integral is independent of the representation, so
+\[
+\mu_0(f)=\sum_{k=1}^{r}a_k\mu(D_k),\qquad
+\mu_0(g)=\sum_{k=1}^{r}b_k\mu(D_k).
+\]
+
+\studyheading{(i) Equality almost everywhere.}
+Suppose $f=g$ $\mu$-a.e., and let
+\[
+N:=\{s\in S:f(s)\ne g(s)\},\qquad \mu(N)=0.
+\]
+Fix $k$ such that $a_k\ne b_k$. For any $s\in D_k$, the partition representations give
+\[
+f(s)=a_k\ne b_k=g(s)\quad\Longrightarrow\quad s\in N.
+\]
+Since $s\in D_k$ was arbitrary, $D_k\subseteq N$. By monotonicity of $\mu$,
+\[
+0\le\mu(D_k)\le\mu(N)=0
+\quad\Longrightarrow\quad \mu(D_k)=0.
+\]
+Consequently, for every $k=1,\ldots,r$,
+\[
+a_k\mu(D_k)=b_k\mu(D_k).
+\]
+Indeed, if $a_k=b_k$ the equality is immediate; otherwise $\mu(D_k)=0$ and both sides vanish. Summing gives
+\[
+\mu_0(f)=\sum_{k=1}^{r}a_k\mu(D_k)
+=\sum_{k=1}^{r}b_k\mu(D_k)=\mu_0(g).
+\]
+
+\studyheading{(ii) Additivity and positive homogeneity.}
+Using the common partition,
+\[
+f+g=\sum_{k=1}^{r}(a_k+b_k)\mathbf1_{D_k},\qquad
+cf=\sum_{k=1}^{r}(ca_k)\mathbf1_{D_k}.
+\]
+Thus $f+g,cf\in SF^+$, since their coefficients are nonnegative and the $D_k$ are measurable. Moreover,
+\[
+\begin{aligned}
+\mu_0(f+g)&=\sum_{k=1}^{r}(a_k+b_k)\mu(D_k) =\sum_{k=1}^{r}a_k\mu(D_k)
+ +\sum_{k=1}^{r}b_k\mu(D_k) =\mu_0(f)+\mu_0(g),
+\end{aligned}
+\]
+and
+\[
+\begin{aligned}
+\mu_0(cf)&=\sum_{k=1}^{r}(ca_k)\mu(D_k) =c\sum_{k=1}^{r}a_k\mu(D_k)
+=c\mu_0(f).
+\end{aligned}
+\]
+The equalities follow from the definition of $\mu_0$ and distributivity of finite nonnegative sums, with $0\cdot\infty=0$ when necessary.
+
+\studyheading{(iii) Monotonicity.}
+Suppose $f\le g$. Since $D_k\ne\emptyset$ and both functions are constant on it, $a_k\le b_k$ for every $k=1,\ldots,r$. Hence
+\[
+\mu_0(f)=\sum_{k=1}^{r}a_k\mu(D_k)
+\le\sum_{k=1}^{r}b_k\mu(D_k)=\mu_0(g).
+\]
+The inequality follows from $a_k\le b_k$ and $\mu(D_k)\ge0$ for every $k$.
+
+\studyheading{(iv) Maximum and minimum.}
+Since $f=a_k$ and $g=b_k$ on $D_k$,
+\[
+\begin{aligned}
+f\vee g&=\sum_{k=1}^{r}\max\{a_k,b_k\}\mathbf1_{D_k},\\
+f\wedge g&=\sum_{k=1}^{r}\min\{a_k,b_k\}\mathbf1_{D_k}.
+\end{aligned}
+\]
+Both functions belong to $SF^+$, because their coefficients are nonnegative and their partition elements are measurable.
+
+Therefore, the statement is proved.
