@@ -1,0 +1,50 @@
+% !TEX root = ../main.tex
+\subsection*{Lemma 5.1 --- Zero Integral Implies Zero Almost Everywhere}%
+\manualtoc{subsection}{\texorpdfstring{Lemma 5.1 --- Zero Integral Implies Zero Almost Everywhere}{Lemma 5.1 --- Zero Integral Implies Zero Almost Everywhere}}{studiabile-nav-1008}%
+
+\studyheading{Statement.} Let $(S,\Sigma,\mu)$ be a measure space and let
+$f\in(m\Sigma)^+$ satisfy $\mu(f)=0$. Then
+\[
+\mu(\{f>0\})=\mu(\{s\in S:f(s)>0\})=0.
+\]
+
+\par\noindent\studyheading{Proof.}\par\nobreak
+
+We argue by contradiction. Suppose that $\mu(\{f>0\})>0$ and define
+\[
+A_n:=\left\{f>\frac1n\right\}\in\Sigma,\qquad n\in\mathbb N.
+\]
+The sets are measurable because $f$ is $\Sigma$-measurable. As we will see in
+HW~46,
+\[
+\{f>0\}
+=\bigcup_{n=1}^{\infty}\left\{f>\frac1n\right\}
+=\lim_{n\to\infty}\left\{f>\frac1n\right\}.
+\]
+Moreover, $A_n\subseteq A_{n+1}$ because $1/(n+1)<1/n$. By continuity
+from below (Lemma~1.5),
+\[
+0<\mu(\{f>0\})=\lim_{n\to\infty}\mu(A_n).
+\]
+Since $(\mu(A_n))_{n\in\mathbb N}$ is nondecreasing and its limit is
+strictly positive, there exists $\bar n\in\mathbb N$ such that
+$\mu(A_n)>0$ for every $n\ge\bar n$. Fix $n=\bar n$ and consider the
+nonnegative simple function
+\[
+h:=\frac1{\bar n}\mathbf1_{A_{\bar n}}\in SF^+.
+\]
+We have $h\le f$: if $s\in A_{\bar n}$, then
+$h(s)=1/\bar n<f(s)$; otherwise $h(s)=0\le f(s)$.
+Therefore, by the definition of the positive Lebesgue integral,
+\[
+\begin{aligned}
+0=\mu(f)&=\sup\{\mu_0(g):g\in SF^+,\ g\le f\} \ge\mu_0(h)
+=\frac1{\bar n}\mu(A_{\bar n})>0.
+\end{aligned}
+\]
+The inequality holds because $h$ is an admissible simple function; the
+following equality uses the definition of $\mu_0$, and the last inequality
+follows from $\mu(A_{\bar n})>0$. This is a contradiction. Thus
+$\mu(\{f>0\})=0$, i.e., $f=0$ $\mu$-a.e.
+
+Therefore, the statement is proved.
