@@ -5070,6 +5070,10 @@ The equalities follow from the definition of the integral of an indicator functi
 \subsection*{Definition --- Integral of a Positive Measurable Function}%
 \manualtoc{subsection}{\texorpdfstring{Definition --- Integral of a Positive Measurable Function}{Definition --- Integral of a Positive Measurable Function}}{studiabile-nav-1005}%
 
+In this chapter, $(m\Sigma)^+$ includes all measurable maps $f:S\to[0,+\infty]$, where measurability is understood through the real threshold tests. Simple functions in $SF^+$ still have only finitely many finite values.
+
+For signed functions, $m\Sigma$ retains the real-valued meaning of Definition~3.1 unless stated otherwise.
+
 Let $(S,\Sigma,\mu)$ be a measure space. For any $f\in(m\Sigma)^+$, define
 \[
 \mu(f):=\int_S f\,d\mu
@@ -5824,6 +5828,8 @@ In particular, if $f\in L^1(S,\Sigma,\mu)$, both $\mu(f^+)$ and $\mu(f^-)$ are f
 \]
 Such functions are called Lebesgue integrable.
 
+We work with measurable representatives. When $L^1(S,\Sigma,\mu)$ is viewed as a normed space, functions equal $\mu$-almost everywhere are identified; the norm of their common equivalence class is $\|f\|_1:=\mu(|f|)$. Before this identification, the same formula defines a seminorm on the collection of integrable functions.
+
 \subsection*{HW 50 --- Absolute Value of the Integral}%
 \manualtoc{subsection}{\texorpdfstring{HW 50 --- Absolute Value of the Integral}{HW 50 --- Absolute Value of the Integral}}{studiabile-nav-2007}%
 
@@ -6121,6 +6127,8 @@ The function
 f=: \frac{d\lambda}{d\mu}
 \]
 is called the Radon--Nikodym derivative of $\lambda$ with respect to $\mu$.
+
+The density is unique up to $\mu$-almost-everywhere equality.
 
 \par\noindent\studyheading{Recall.}%
 \inlinetoc{subsubsection}{\texorpdfstring{Recall.}{Recall.}}{studiabile-nav-3005}%

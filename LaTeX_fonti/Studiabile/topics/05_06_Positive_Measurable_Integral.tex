@@ -1,0 +1,54 @@
+% !TEX root = ../main.tex
+\subsection*{Example --- Equality Lebesgue-Almost Everywhere}%
+\manualtoc{subsection}{\texorpdfstring{Example --- Equality Lebesgue-Almost Everywhere}{Example --- Equality Lebesgue-Almost Everywhere}}{studiabile-nav-1004}%
+
+Let $S=[0,1]$, $\Sigma=\mathcal B([0,1])$, $\mu=\mathrm{Leb}$, and consider
+\[
+f=\mathbf1_{[\frac12,1]},\qquad
+ g=\mathbf1_{(\frac12,1]}.
+\]
+The functions differ only at $s=\frac12$, so
+\[
+\{s\in S:f(s)\ne g(s)\}=\bigl\{\tfrac12\bigr\},
+\qquad \mathrm{Leb}\bigl(\{\tfrac12\}\bigr)=0.
+\]
+Hence $f=g$ $\mathrm{Leb}$-a.e. and, by HW~44(i),
+\[
+\mu_0(f)
+=\mathrm{Leb}\bigl([\tfrac12,1]\bigr)
+=\tfrac12
+=\mathrm{Leb}\bigl((\tfrac12,1]\bigr)
+=\mu_0(g).
+\]
+The equalities follow from the definition of the integral of an indicator function and the length of the two intervals.
+
+\subsection*{Definition --- Integral of a Positive Measurable Function}%
+\manualtoc{subsection}{\texorpdfstring{Definition --- Integral of a Positive Measurable Function}{Definition --- Integral of a Positive Measurable Function}}{studiabile-nav-1005}%
+
+In this chapter, $(m\Sigma)^+$ includes all measurable maps $f:S\to[0,+\infty]$, where measurability is understood through the real threshold tests. Simple functions in $SF^+$ still have only finitely many finite values.
+
+For signed functions, $m\Sigma$ retains the real-valued meaning of Definition~3.1 unless stated otherwise.
+
+Let $(S,\Sigma,\mu)$ be a measure space. For any $f\in(m\Sigma)^+$, define
+\[
+\mu(f):=\int_S f\,d\mu
+:=\sup\bigl\{\mu_0(h):h\in SF^+,\ h\le f\bigr\}.
+\]
+Thus the integral of $f$ is the supremum of the integrals of all nonnegative simple functions lying below $f$.
+
+\subsection*{Observation --- Agreement with the Simple Integral}%
+\manualtoc{subsection}{\texorpdfstring{Observation --- Agreement with the Simple Integral}{Observation --- Agreement with the Simple Integral}}{studiabile-nav-1006}%
+
+If $f\in SF^+$, then
+\[
+\mu(f)=\mu_0(f).
+\]
+Indeed, $f$ itself belongs to the family over which the supremum is taken, so $\mu(f)\ge\mu_0(f)$. Conversely, for every $h\in SF^+$ with $h\le f$, monotonicity of $\mu_0$ (HW~44(iii)) gives $\mu_0(h)\le\mu_0(f)$. Taking the supremum yields $\mu(f)\le\mu_0(f)$, proving the equality.
+
+\subsection*{HW 45 --- Monotonicity of the Positive Lebesgue Integral}%
+\manualtoc{subsection}{\texorpdfstring{HW 45 --- Monotonicity of the Positive Lebesgue Integral}{HW 45 --- Monotonicity of the Positive Lebesgue Integral}}{studiabile-nav-1007}%
+
+\studyheading{Statement.} Prove that if $f,g\in(m\Sigma)^+$ satisfy $f\le g$, then
+\[
+\mu(f)\le\mu(g).
+\]
